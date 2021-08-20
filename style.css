@@ -43,3 +43,15 @@ label {
 #rate > input {
   width: 140px;
 }
+#time {
+  position: relative;
+  right: 11rem;
+}
+button {
+  margin: 1rem 0;
+
+  width: fit-content;
+}
+#highlight {
+  background-color: yellow;
+}
