@@ -27,6 +27,8 @@ h1 {
   height: 80vh;
   margin: 0 auto;
   padding: 40px;
+  border-radius: 30px;
+  margin-top: 1rem;
 }
 #calculator-form {
   height: auto;
