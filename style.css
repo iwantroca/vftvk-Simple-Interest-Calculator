@@ -57,3 +57,14 @@ button {
 #highlight {
   background-color: yellow;
 }
+/* footer {
+  margin-top: 3rem;
+  padding-left: 5rem;
+  font-weight: bold;
+} */
+footer {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
