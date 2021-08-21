@@ -49,8 +49,8 @@ computeButton.addEventListener("click", () => {
   calculateInterest();
 
   if (para.textContent == "") {
-    resultText = `If you deposit <span id='highlight'>${principalValue}</span><br>
-  at an interest of <span id='highlight'>${interestRate}</span><br>
+    resultText = `If you deposit <span id='highlight'>${principalValue},</span><br>
+  at an interest of <span id='highlight'>${interestRate}%</span><br>
   You will recieve an amount of <span id='highlight'>${interestValue},</span><br>
   in the year <span id='highlight'>${currentYear + timePeriodValue}</span>.`;
   }
