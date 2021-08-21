@@ -9,7 +9,7 @@ const result = document.querySelector("#result");
 const currentYear = new Date().getFullYear();
 const para = document.createElement("p");
 let principalValue = 0;
-let interestRate = 0;
+let interestRate = 1;
 let timePeriodValue = 1;
 let interestValue = 0;
 let finalAmount = 0;
@@ -24,7 +24,7 @@ function calculateInterest() {
 }
 
 principalInput.addEventListener("keyup", (e) => {
-  if (e.target.value > 0) {
+  if (e.target.value >= 0) {
     principalValue = Number(e.target.value);
     console.log(principalValue);
     para.textContent = "";
@@ -46,16 +46,20 @@ timeSelector.addEventListener("click", (e) => {
   para.textContent = "";
 });
 computeButton.addEventListener("click", () => {
-  calculateInterest();
-
-  if (para.textContent == "") {
-    resultText = `If you deposit <span id='highlight'>${principalValue},</span><br>
+  if (principalValue > 0) {
+    calculateInterest();
+    if (para.textContent == "" && principalValue >= 0) {
+      resultText = `If you deposit <span id='highlight'>${principalValue},</span><br>
   at an interest of <span id='highlight'>${interestRate}%</span><br>
   You will recieve an amount of <span id='highlight'>${interestValue},</span><br>
   in the year <span id='highlight'>${currentYear + timePeriodValue}</span>.`;
+      para.innerHTML = resultText;
+      computeButton.parentElement.appendChild(para);
+      console.log(para);
+    }
+  } else {
+    alert("Enter a positive number");
+    principalInput.value = "";
+    principalInput.focus();
   }
-
-  para.innerHTML = resultText;
-  computeButton.parentElement.appendChild(para);
-  console.log(para);
 });
