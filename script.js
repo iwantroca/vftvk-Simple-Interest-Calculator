@@ -50,9 +50,9 @@ computeButton.addEventListener("click", () => {
     calculateInterest();
     if (para.textContent == "" && principalValue >= 0) {
       resultText = `If you deposit <span id='highlight'>${principalValue},</span><br>
-  at an interest of <span id='highlight'>${interestRate}%</span><br>
+  at an interest of <span id='highlight'>${interestRate}%.</span><br>
   You will recieve an amount of <span id='highlight'>${interestValue},</span><br>
-  in the year <span id='highlight'>${currentYear + timePeriodValue}</span>.`;
+  in the year <span id='highlight'>${currentYear + timePeriodValue}</span>`;
       para.innerHTML = resultText;
       computeButton.parentElement.appendChild(para);
       console.log(para);
