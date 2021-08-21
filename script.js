@@ -19,9 +19,8 @@ function calculateInterest() {
   interestValue = (principalValue * interestRate * timePeriodValue) / 100;
   interestValue = interestValue.toFixed(4);
   interestValue = Number(interestValue);
-  finalAmount = principalValue + interestValue;
-  console.log(finalAmount);
-  return finalAmount;
+  console.log(interestValue);
+  return interestValue;
 }
 
 principalInput.addEventListener("keyup", (e) => {
@@ -52,7 +51,7 @@ computeButton.addEventListener("click", () => {
   if (para.textContent == "") {
     resultText = `If you deposit <span id='highlight'>${principalValue}</span><br>
   at an interest of <span id='highlight'>${interestRate}</span><br>
-  You will recieve an amount of <span id='highlight'>${finalAmount},</span><br>
+  You will recieve an amount of <span id='highlight'>${interestValue},</span><br>
   in the year <span id='highlight'>${currentYear + timePeriodValue}</span>.`;
   }
 
