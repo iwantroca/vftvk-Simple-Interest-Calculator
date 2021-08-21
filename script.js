@@ -2,6 +2,7 @@ const floatingInput = document.createElement("p");
 const rateLabel = document.querySelector("#rate");
 const principalInput = document.querySelector("#principal");
 const ratePara = rateLabel.lastElementChild;
+const rateInput = document.querySelector("#myRange");
 const timeSelector = document.querySelector("#time");
 const computeButton = document.querySelector("button");
 const result = document.querySelector("#result");
@@ -24,18 +25,26 @@ function calculateInterest() {
 }
 
 principalInput.addEventListener("keyup", (e) => {
-  principalValue = Number(e.target.value);
-  console.log(principalValue);
-  para.textContent = "";
+  if (e.target.value > 0) {
+    principalValue = Number(e.target.value);
+    console.log(principalValue);
+    para.textContent = "";
+  } else {
+    alert("enter a positive number");
+    e.target.value = "";
+  }
 });
-rateLabel.addEventListener("click", (e) => {
+rateInput.addEventListener("click", (e) => {
   interestRate = Number(e.target.value);
   ratePara.textContent = `${interestRate}%`;
+  para.textContent = "";
+
   console.log(interestRate);
 });
 timeSelector.addEventListener("click", (e) => {
   timePeriodValue = Number(e.target.value);
   console.log(timePeriodValue);
+  para.textContent = "";
 });
 computeButton.addEventListener("click", () => {
   calculateInterest();
