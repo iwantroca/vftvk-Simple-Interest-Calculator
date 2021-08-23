@@ -33,7 +33,7 @@ principalInput.addEventListener("keyup", (e) => {
     e.target.value = "";
   }
 });
-rateInput.addEventListener("click", (e) => {
+rateInput.addEventListener("change", (e) => {
   interestRate = Number(e.target.value);
   ratePara.textContent = `${interestRate}%`;
   para.textContent = "";
